@@ -29,16 +29,31 @@ This project is a Python-based application designed to extract, process, and sto
 ## Project Structure
 ```
 supermarket_data/ 
-├── config/ # Configuration files (e.g., logging) 
-├── database/ # Database models and utilities 
-├── dependencies/ # Authentication and dependency management 
-├── email_notifications/ # Email generation and templates 
-├── src/ # Main application logic │ 
-├── data_extractors/ # Extractors for different supermarkets 
-├── utils/ # Utility functions and helpers 
-├── Dockerfile # Docker configuration 
-├── pyproject.toml # Poetry configuration 
-├── README.md # Project documentation
+supermarket_data/
+├── src/                                # Main application logic
+│   ├── main.py                         # Entry point of the application
+│   ├── data_extractors/                # Data extraction modules
+│   │   ├── corte_ingles/
+│   │   │   ├── eci_generic_extractor.py
+│   │   │   ├── eci_supermarket_extractor.py
+│   │   ├── mercadona/
+│   │       ├── mercadona_extractor.py
+├── database/                           # Database-related functionality
+│   ├── models.py                       # Database models (e.g., ECISupermarket, Mercadona)
+│   ├── connection.py                   # Database connection settings
+│   ├── utils_db.py                     # Utility functions for database operations
+├── utils/                              # Utility modules
+│   ├── default_columns.py              # Default column definitions for database tables
+├── email_notifications/                # Email notification functionality
+│   ├── email_generator.py              # Email generation and sending logic
+├── config/                             # Configuration files (not explicitly shown but likely exists)
+│   ├── log_config.py                   # Logging configuration (inferred)
+├── dependencies/                       # Dependency management (inferred)
+│   ├── authenticator.py                # Handles authentication (e.g., database credentials)
+│   ├── postgres_keys.yaml              # Database credentials (inferred)
+├── Dockerfile                          # Docker configuration (inferred)
+├── pyproject.toml                      # Poetry configuration for dependencies
+├── README.md                           # Project documentation (to be created)
 ```
 
 
